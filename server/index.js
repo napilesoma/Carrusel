@@ -45,6 +45,27 @@ app.post('/notas', auth(['docente']), async(req,res)=>{
 });
 
 const PORT = process.env.PORT || 3000;
+app.get('/', (req, res) => {
+  res.send(`
+    <html>
+      <head>
+        <title>Carrusel</title>
+        <style>
+          body { font-family: Arial; text-align: center; margin-top: 80px; background:#f6f6ff; }
+          h1 { color:#6a0dad; }
+          button { padding:15px; font-size:18px; background:#6a0dad; color:white; border:none; border-radius:10px; }
+        </style>
+      </head>
+      <body>
+        <h1>🎠 Sistema Carrusel</h1>
+        <p>El sistema está funcionando correctamente.</p>
+        <p>Ahora puedes conectar el frontend.</p>
+        <button>BIENVENIDOS</button>
+      </body>
+    </html>
+  `);
+});
+
 app.listen(PORT, ()=>console.log('Servidor Carrusel activo en puerto', PORT));
 
 
